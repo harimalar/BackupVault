@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BackupVault</title>
+  <meta name="description" content="BackupVault is a local-first macOS backup app for backing up folders to external drives or NAS destinations.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f7fb;
+      --surface: rgba(255, 255, 255, 0.88);
+      --surface-strong: rgba(255, 255, 255, 0.96);
+      --text: #172033;
+      --muted: #5f6b84;
+      --border: rgba(27, 39, 63, 0.10);
+      --accent: #3f7cff;
+      --accent-soft: rgba(63, 124, 255, 0.12);
+      --shadow: 0 18px 44px rgba(27, 39, 63, 0.10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e1117;
+        --surface: rgba(24, 28, 37, 0.90);
+        --surface-strong: rgba(28, 32, 42, 0.96);
+        --text: #f4f7ff;
+        --muted: #a8b0c2;
+        --border: rgba(255, 255, 255, 0.08);
+        --accent: #79a8ff;
+        --accent-soft: rgba(121, 168, 255, 0.18);
+        --shadow: 0 22px 48px rgba(0, 0, 0, 0.34);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(63, 124, 255, 0.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(78, 201, 176, 0.14), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-copy {
+      padding: 48px;
+      background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .subhead {
+      margin: 0 0 28px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--muted);
+      max-width: 18ch;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.secondary {
+      background: var(--surface-strong);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 20px;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .metric-value {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .metric-copy {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .section-card {
+      padding: 24px;
+    }
+
+    .section-card h2,
+    .link-card h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-card p,
+    .link-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .link-card {
+      padding: 24px;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .link-card:hover {
+      text-decoration: none;
+      border-color: rgba(63, 124, 255, 0.28);
+      transform: translateY(-1px);
+      transition: 180ms ease;
+    }
+
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .shots-card {
+      padding: 24px;
+    }
+
+    .shot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .shot-grid img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--surface-strong);
+    }
+
+    .footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .grid,
+      .links,
+      .screenshots {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero-side {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        padding: 20px 16px 48px;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .cta-row,
+      .meta,
+      .nav-links {
+        width: 100%;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .shot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="nav">
+      <div class="brand">BackupVault</div>
+      <div class="nav-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="support.html">Support</a>
+        <a href="https://github.com/harimalar/BackupVault">GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-copy card">
+        <div class="eyebrow">Private Mac backups</div>
+        <h1>Local-first backup for your Mac.</h1>
+        <p class="subhead">Protect important folders with dated snapshots to USB drives or NAS. No cloud. No account. No subscription.</p>
+        <div class="cta-row">
+          <a class="button primary" href="support.html">Contact Support</a>
+          <a class="button secondary" href="https://github.com/harimalar/BackupVault">View on GitHub</a>
+        </div>
+        <div class="meta">
+          <div class="pill">One-time purchase: $9.99</div>
+          <div class="pill">macOS backup utility</div>
+          <div class="pill">USB and SMB/NAS support</div>
+        </div>
+      </div>
+
+      <div class="hero-side card">
+        <div class="metric">
+          <div class="metric-label">What it does</div>
+          <div class="metric-value">Snapshot backups</div>
+          <div class="metric-copy">Keep dated backup versions so files and folders can be restored later.</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">How it stays private</div>
+          <div class="metric-value">No cloud required</div>
+          <div class="metric-copy">Backups live on the destination you choose, with no account or tracking service.</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Restore options</div>
+          <div class="metric-value">File, folder, or full snapshot</div>
+          <div class="metric-copy">Browse snapshots and restore only what you need or recover everything at once.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="section-card card">
+        <h2>Back up your folders</h2>
+        <p>Select the folders you want to protect, then choose an external drive or NAS destination.</p>
+      </div>
+      <div class="section-card card">
+        <h2>Keep dated snapshots</h2>
+        <p>Each backup creates a browsable snapshot so older versions stay easy to find and restore.</p>
+      </div>
+      <div class="section-card card">
+        <h2>Restore with confidence</h2>
+        <p>Restore a single file, a folder, or an entire snapshot to the original or a custom location.</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="link-card card" href="privacy-policy.html">
+        <h2>Privacy Policy</h2>
+        <p>Simple policy covering local storage, permissions, and no-tracking operation.</p>
+      </a>
+      <a class="link-card card" href="terms.html">
+        <h2>Terms of Use</h2>
+        <p>Short and readable terms for the BackupVault app and website.</p>
+      </a>
+      <a class="link-card card" href="support.html">
+        <h2>Support</h2>
+        <p>Contact details, help links, and support information for App Store users.</p>
+      </a>
+    </div>
+
+    <div class="screenshots">
+      <div class="shots-card card">
+        <h2>Designed to feel calm</h2>
+        <p>BackupVault is built to show backup health, destination status, and restore access without clutter.</p>
+        <div class="shot-grid">
+          <img src="ScreenShots/CleanShot%202026-03-19%20at%2019.11.15@2x.png" alt="BackupVault dashboard in dark mode">
+          <img src="ScreenShots/CleanShot%202026-03-19%20at%2019.11.30@2x.png" alt="BackupVault setup screen in dark mode">
+          <img src="ScreenShots/CleanShot%202026-03-19%20at%2019.11.44@2x.png" alt="BackupVault restore screen in dark mode">
+          <img src="ScreenShots/CleanShot%202026-03-19%20at%2019.12.03@2x.png" alt="BackupVault settings screen in dark mode">
+        </div>
+      </div>
+
+      <div class="shots-card card">
+        <h2>Useful public links</h2>
+        <p>Use this GitHub Pages site as the single public home for BackupVault. It can also supply the App Store Privacy Policy and Support URLs.</p>
+        <div class="shot-grid">
+          <img src="ScreenShots/CleanShot%202026-03-19%20at%2019.11.54@2x.png" alt="BackupVault dashboard in light mode">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      BackupVault for macOS. Local-first backups to external drives and NAS.
+    </div>
+  </div>
+</body>
+</html>

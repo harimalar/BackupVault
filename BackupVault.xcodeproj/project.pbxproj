@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F001001 /* BackupVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001101 /* BackupVaultApp.swift */; };
+		F001002 /* BackupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001102 /* BackupCoordinator.swift */; };
+		F001003 /* BackupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001103 /* BackupError.swift */; };
+		F001004 /* FileCopyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001104 /* FileCopyEngine.swift */; };
+		F001005 /* FileScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001105 /* FileScanner.swift */; };
+		F001006 /* IncrementalLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001106 /* IncrementalLogic.swift */; };
+		F001007 /* NASMountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001107 /* NASMountService.swift */; };
+		F001008 /* RestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001108 /* RestoreService.swift */; };
+		F001009 /* BackupSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001109 /* BackupSchedule.swift */; };
+		F00100A /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00110A /* ScheduleManager.swift */; };
+		F00100B /* VolumeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00110B /* VolumeObserver.swift */; };
+		F00100C /* BackupDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00110C /* BackupDestination.swift */; };
+		F00100D /* BackupMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00110D /* BackupMetadata.swift */; };
+		F00100E /* DestinationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00110E /* DestinationStore.swift */; };
+		F00100F /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00110F /* KeychainService.swift */; };
+		F001010 /* BackupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001110 /* BackupViewModel.swift */; };
+		F001011 /* RestoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001111 /* RestoreViewModel.swift */; };
+		F001012 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001112 /* SettingsViewModel.swift */; };
+		F001013 /* BackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001113 /* BackupView.swift */; };
+		F001014 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001114 /* ContentView.swift */; };
+		F001015 /* RestoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001115 /* RestoreView.swift */; };
+		F001016 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001116 /* SettingsView.swift */; };
+		F001017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F001117 /* Assets.xcassets */; };
+		F001019 /* BackupHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00111A /* BackupHealth.swift */; };
+		F00101A /* HealthEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00111B /* HealthEngine.swift */; };
+		F00101B /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00111C /* DashboardViewModel.swift */; };
+		F00101C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00111D /* DashboardView.swift */; };
+		F001020 /* BackupJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001120 /* BackupJob.swift */; };
+		F001021 /* BackupSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001121 /* BackupSnapshot.swift */; };
+		F001022 /* BackupHealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001122 /* BackupHealthStatus.swift */; };
+		F001023 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001123 /* Logger.swift */; };
+		F001024 /* FileHasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001124 /* FileHasher.swift */; };
+		F001025 /* DiskSpaceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001125 /* DiskSpaceMonitor.swift */; };
+		F001026 /* VerificationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001126 /* VerificationEngine.swift */; };
+		F001027 /* ExternalDriveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001127 /* ExternalDriveManager.swift */; };
+		F001028 /* NASManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001128 /* NASManager.swift */; };
+		F001029 /* BackupHealthAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001129 /* BackupHealthAnalyzer.swift */; };
+		F00102A /* BackupHealthScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00112A /* BackupHealthScore.swift */; };
+		F00102B /* BackupScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00112B /* BackupScheduler.swift */; };
+		F00102C /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00112C /* HealthView.swift */; };
+		F00102D /* AtomicFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00112D /* AtomicFileWriter.swift */; };
+		F00102E /* BandwidthThrottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00112E /* BandwidthThrottle.swift */; };
+		F00102F /* BackupExclusions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00112F /* BackupExclusions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F000001 /* BackupVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackupVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F001101 /* BackupVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupVaultApp.swift; sourceTree = "<group>"; };
+		F001102 /* BackupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCoordinator.swift; sourceTree = "<group>"; };
+		F001103 /* BackupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupError.swift; sourceTree = "<group>"; };
+		F001104 /* FileCopyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCopyEngine.swift; sourceTree = "<group>"; };
+		F001105 /* FileScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileScanner.swift; sourceTree = "<group>"; };
+		F001106 /* IncrementalLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementalLogic.swift; sourceTree = "<group>"; };
+		F001107 /* NASMountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASMountService.swift; sourceTree = "<group>"; };
+		F001108 /* RestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreService.swift; sourceTree = "<group>"; };
+		F001109 /* BackupSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupSchedule.swift; sourceTree = "<group>"; };
+		F00110A /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		F00110B /* VolumeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeObserver.swift; sourceTree = "<group>"; };
+		F00110C /* BackupDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupDestination.swift; sourceTree = "<group>"; };
+		F00110D /* BackupMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupMetadata.swift; sourceTree = "<group>"; };
+		F00110E /* DestinationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationStore.swift; sourceTree = "<group>"; };
+		F00110F /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		F001110 /* BackupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewModel.swift; sourceTree = "<group>"; };
+		F001111 /* RestoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreViewModel.swift; sourceTree = "<group>"; };
+		F001112 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		F001113 /* BackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupView.swift; sourceTree = "<group>"; };
+		F001114 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F001115 /* RestoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreView.swift; sourceTree = "<group>"; };
+		F001116 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F001117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F001118 /* BackupVault.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BackupVault.entitlements; sourceTree = "<group>"; };
+		F00111A /* BackupHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupHealth.swift; sourceTree = "<group>"; };
+		F00111B /* HealthEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthEngine.swift; sourceTree = "<group>"; };
+		F00111C /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		F00111D /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		F001120 /* BackupJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupJob.swift; sourceTree = "<group>"; };
+		F001121 /* BackupSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupSnapshot.swift; sourceTree = "<group>"; };
+		F001122 /* BackupHealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupHealthStatus.swift; sourceTree = "<group>"; };
+		F001123 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F001124 /* FileHasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHasher.swift; sourceTree = "<group>"; };
+		F001125 /* DiskSpaceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskSpaceMonitor.swift; sourceTree = "<group>"; };
+		F001126 /* VerificationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationEngine.swift; sourceTree = "<group>"; };
+		F001127 /* ExternalDriveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalDriveManager.swift; sourceTree = "<group>"; };
+		F001128 /* NASManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASManager.swift; sourceTree = "<group>"; };
+		F001129 /* BackupHealthAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupHealthAnalyzer.swift; sourceTree = "<group>"; };
+		F00112A /* BackupHealthScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupHealthScore.swift; sourceTree = "<group>"; };
+		F00112B /* BackupScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupScheduler.swift; sourceTree = "<group>"; };
+		F00112C /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		F00112D /* AtomicFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicFileWriter.swift; sourceTree = "<group>"; };
+		F00112E /* BandwidthThrottle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandwidthThrottle.swift; sourceTree = "<group>"; };
+		F00112F /* BackupExclusions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupExclusions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F000003 = {
+			isa = PBXGroup;
+			children = (
+				F000004 /* BackupVault */,
+				F000005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F000004 /* BackupVault */ = {
+			isa = PBXGroup;
+			children = (
+				F000006 /* App */,
+				F000007 /* UI */,
+				F000008 /* BackupEngine */,
+				F000009 /* StorageLayer */,
+				F00000A /* Scheduler */,
+				F00000B /* RestoreSystem */,
+				F00001C /* Models */,
+				F00001D /* Utilities */,
+				F00001E /* Storage */,
+				F00001F /* Health */,
+				F001117 /* Assets.xcassets */,
+				F001118 /* BackupVault.entitlements */,
+			);
+			path = BackupVault;
+			sourceTree = "<group>";
+		};
+		F000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F000001 /* BackupVault.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F000006 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F001101 /* BackupVaultApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F000007 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F00000C /* ViewModels */,
+				F00000D /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F000008 /* BackupEngine */ = {
+			isa = PBXGroup;
+			children = (
+				F001102 /* BackupCoordinator.swift */,
+				F001103 /* BackupError.swift */,
+				F001104 /* FileCopyEngine.swift */,
+				F001105 /* FileScanner.swift */,
+				F00111B /* HealthEngine.swift */,
+				F001106 /* IncrementalLogic.swift */,
+				F001107 /* NASMountService.swift */,
+				F001126 /* VerificationEngine.swift */,
+			);
+			path = BackupEngine;
+			sourceTree = "<group>";
+		};
+		F000009 /* StorageLayer */ = {
+			isa = PBXGroup;
+			children = (
+				F00110C /* BackupDestination.swift */,
+				F00110D /* BackupMetadata.swift */,
+				F00111A /* BackupHealth.swift */,
+				F00112F /* BackupExclusions.swift */,
+				F00110E /* DestinationStore.swift */,
+				F00110F /* KeychainService.swift */,
+			);
+			path = StorageLayer;
+			sourceTree = "<group>";
+		};
+		F00000A /* Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				F001109 /* BackupSchedule.swift */,
+				F00110A /* ScheduleManager.swift */,
+				F00110B /* VolumeObserver.swift */,
+				F00112B /* BackupScheduler.swift */,
+			);
+			path = Scheduler;
+			sourceTree = "<group>";
+		};
+		F00000B /* RestoreSystem */ = {
+			isa = PBXGroup;
+			children = (
+				F001108 /* RestoreService.swift */,
+			);
+			path = RestoreSystem;
+			sourceTree = "<group>";
+		};
+		F00000C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F001110 /* BackupViewModel.swift */,
+				F00111C /* DashboardViewModel.swift */,
+				F001111 /* RestoreViewModel.swift */,
+				F001112 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F00000D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F001113 /* BackupView.swift */,
+				F001114 /* ContentView.swift */,
+				F00111D /* DashboardView.swift */,
+				F00112C /* HealthView.swift */,
+				F001115 /* RestoreView.swift */,
+				F001116 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F00001C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F001120 /* BackupJob.swift */,
+				F001121 /* BackupSnapshot.swift */,
+				F001122 /* BackupHealthStatus.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F00001D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F001123 /* Logger.swift */,
+				F001124 /* FileHasher.swift */,
+				F001125 /* DiskSpaceMonitor.swift */,
+				F00112D /* AtomicFileWriter.swift */,
+				F00112E /* BandwidthThrottle.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F00001E /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F001127 /* ExternalDriveManager.swift */,
+				F001128 /* NASManager.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		F00001F /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				F001129 /* BackupHealthAnalyzer.swift */,
+				F00112A /* BackupHealthScore.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F00000E /* BackupVault */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F00000F /* Build configuration list for PBXNativeTarget "BackupVault" */;
+			buildPhases = (
+				F000010 /* Sources */,
+				F000002 /* Frameworks */,
+				F000011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BackupVault;
+			productName = BackupVault;
+			productReference = F000001 /* BackupVault.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F000012 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = F000013 /* Build configuration list for PBXProject "BackupVault" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F000003;
+			productRefGroup = F000005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F00000E /* BackupVault */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F000011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F001017 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F000010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F001001 /* BackupVaultApp.swift in Sources */,
+				F001002 /* BackupCoordinator.swift in Sources */,
+				F001003 /* BackupError.swift in Sources */,
+				F001004 /* FileCopyEngine.swift in Sources */,
+				F001005 /* FileScanner.swift in Sources */,
+				F001006 /* IncrementalLogic.swift in Sources */,
+				F001007 /* NASMountService.swift in Sources */,
+				F001008 /* RestoreService.swift in Sources */,
+				F001009 /* BackupSchedule.swift in Sources */,
+				F00100A /* ScheduleManager.swift in Sources */,
+				F00100B /* VolumeObserver.swift in Sources */,
+				F00100C /* BackupDestination.swift in Sources */,
+				F00100D /* BackupMetadata.swift in Sources */,
+				F00100E /* DestinationStore.swift in Sources */,
+				F00100F /* KeychainService.swift in Sources */,
+				F001010 /* BackupViewModel.swift in Sources */,
+				F001011 /* RestoreViewModel.swift in Sources */,
+				F001012 /* SettingsViewModel.swift in Sources */,
+				F001013 /* BackupView.swift in Sources */,
+				F001014 /* ContentView.swift in Sources */,
+				F001015 /* RestoreView.swift in Sources */,
+				F001016 /* SettingsView.swift in Sources */,
+				F001019 /* BackupHealth.swift in Sources */,
+				F00101A /* HealthEngine.swift in Sources */,
+				F00101B /* DashboardViewModel.swift in Sources */,
+				F00101C /* DashboardView.swift in Sources */,
+				F001020 /* BackupJob.swift in Sources */,
+				F001021 /* BackupSnapshot.swift in Sources */,
+				F001022 /* BackupHealthStatus.swift in Sources */,
+				F001023 /* Logger.swift in Sources */,
+				F001024 /* FileHasher.swift in Sources */,
+				F001025 /* DiskSpaceMonitor.swift in Sources */,
+				F001026 /* VerificationEngine.swift in Sources */,
+				F001027 /* ExternalDriveManager.swift in Sources */,
+				F001028 /* NASManager.swift in Sources */,
+				F001029 /* BackupHealthAnalyzer.swift in Sources */,
+				F00102A /* BackupHealthScore.swift in Sources */,
+				F00102B /* BackupScheduler.swift in Sources */,
+				F00102C /* HealthView.swift in Sources */,
+				F00102D /* AtomicFileWriter.swift in Sources */,
+				F00102E /* BandwidthThrottle.swift in Sources */,
+				F00102F /* BackupExclusions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F000014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F000015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		F000016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BackupVault/BackupVault.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 7YP2443K9F;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BackupVault;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BackupVault.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F000017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BackupVault/BackupVault.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 7YP2443K9F;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BackupVault;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BackupVault.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F00000F /* Build configuration list for PBXNativeTarget "BackupVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F000016 /* Debug */,
+				F000017 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F000013 /* Build configuration list for PBXProject "BackupVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F000014 /* Debug */,
+				F000015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F000012 /* Project object */;
+}
