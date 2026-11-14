@@ -1,83 +1,31 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BackupVault Terms of Use</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f5f7fb;
-      --surface: rgba(255, 255, 255, 0.92);
-      --text: #172033;
-      --muted: #5f6b84;
-      --border: rgba(27, 39, 63, 0.10);
-      --accent: #3f7cff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0e1117;
-        --surface: rgba(24, 28, 37, 0.94);
-        --text: #f4f7ff;
-        --muted: #a8b0c2;
-        --border: rgba(255, 255, 255, 0.08);
-        --accent: #79a8ff;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 32px 20px 64px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 32px;
-    }
-    h1, h2 { letter-spacing: -0.03em; }
-    h1 { margin-top: 0; font-size: 42px; }
-    h2 { margin-top: 28px; font-size: 24px; }
-    p, li { color: var(--muted); font-size: 17px; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <main>
-    <div class="card">
-      <p><a href="index.html">Back to BackupVault</a></p>
-      <h1>Terms of Use</h1>
-      <p>Effective date: March 19, 2026</p>
-      <p>These Terms of Use govern your use of BackupVault and the BackupVault website.</p>
-
-      <h2>Use of the app</h2>
-      <p>BackupVault is provided as a local macOS backup utility. You may use the app for personal or internal business use, subject to applicable law and the rules of the platform where you downloaded it.</p>
-
-      <h2>Your responsibility</h2>
-      <ul>
-        <li>You are responsible for choosing what files to back up and where they are stored.</li>
-        <li>You are responsible for verifying that your backup destination has enough free space and is functioning correctly.</li>
-        <li>You should periodically test restores to confirm your backup workflow meets your needs.</li>
-      </ul>
-
-      <h2>No warranty</h2>
-      <p>BackupVault is provided on an "as is" and "as available" basis, without warranties of any kind to the extent permitted by law.</p>
-
-      <h2>Limitation of liability</h2>
-      <p>To the extent permitted by law, we are not liable for indirect, incidental, special, consequential, or punitive damages, including loss of data, profits, or business interruption.</p>
-
-      <h2>Contact</h2>
-      <p>Questions about these terms may be sent to <a href="mailto:rajhari@gmail.com">rajhari@gmail.com</a>.</p>
-    </div>
-  </main>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BackupVault — Terms of Use</title>
+<style>
+:root{color-scheme:light dark;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;font-size:18px}body{margin:0;background:light-dark(#f7f8fa,#17191d);color:light-dark(#20252d,#eef0f5)}main{max-width:850px;margin:48px auto;padding:32px;border-radius:20px;background:light-dark(white,#22262d)}nav{display:flex;flex-wrap:wrap;gap:20px}a{color:light-dark(#175cb8,#8dbcff)}h1{font-size:2rem;line-height:1.2}h2{font-size:1.25rem;margin-top:32px}p{margin:12px 0}footer{margin-top:36px;padding-top:20px;border-top:1px solid #8887;font-size:.9rem}@media(max-width:600px){main{margin:0;padding:24px;border-radius:0}}
+</style></head><body><main>
+<nav aria-label="BackupVault pages"><a href="https://harimalar.github.io/BackupVault/">BackupVault</a><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
+<h1>Terms of Use</h1>
+<section><h2>Last updated</h2>
+<p>November 13, 2026</p></section>
+<section><h2>App Store license</h2>
+<p>For copies of BackupVault obtained from the Mac App Store, Apple's Standard Licensed Application End User License Agreement applies, together with the applicable App Store terms. Read the full agreement using the link below.</p>
+<p>This page explains BackupVault's operation and does not replace that license or limit rights that applicable consumer law gives you. For a copy supplied outside the App Store, consult the license provided with that copy.</p></section>
+<section><h2>What the app backs up</h2>
+<p>BackupVault copies selected folders to a destination you control. It is not a bootable or full-system backup. Hidden files, symbolic links, and items matching configured exclusions are not copied. Files that cannot be read or change during copying can cause a run to fail. Optional verification compares file content but cannot guarantee future recoverability or protect against drive failure.</p>
+<p>Choose the folders and destination carefully, keep sufficient free space, and periodically test a restore. Keep complete snapshot folders together and use Restore in BackupVault to recover Mac attributes stored in the snapshot metadata archives. Only copy or access files and servers you have permission to use.</p></section>
+<section><h2>Restore and automatic cleanup</h2>
+<p>Restoring files can replace matching files at the restore destination. Folder restores merge contents and retain unrelated existing files. Review the chosen restore location before starting.</p>
+<p>Keep the last 10 backups is optional and off by default. Once enabled, it permanently deletes older recognized completed backups for this Mac in the same backup folder after a new backup succeeds. The newest successful backup is protected. Deleted snapshots cannot be recovered through BackupVault. Keep separate copies of any archives you want to retain indefinitely.</p></section>
+<section><h2>Scheduling, eject, and security</h2>
+<p>Automatic schedules require BackupVault to remain open and the destination to be available. Do not disconnect a drive during backup or restore.</p>
+<p>Eject when finished is optional and off by default. It asks macOS to eject an external destination after a successful backup and cleanup. Wait for confirmation that the drive was safely ejected; if eject fails, leave it connected and use Finder. Network destinations remain connected.</p>
+<p>Backups use normal files and folders. BackupVault does not add backup encryption. Secure your devices, network shares, and credentials appropriately.</p></section>
+<section><h2>Warranty, liability, and consumer rights</h2>
+<p>Backup software and storage can fail. Keep an independent copy of irreplaceable data. Warranty, liability, permitted use, and dispute terms for App Store copies are set out in Apple's Standard License Agreement, subject to applicable law. Nothing on this page removes mandatory consumer protections.</p></section>
+<section><h2>Privacy and support</h2>
+<p>See the Privacy Policy for local settings, logs, network access, saved credentials, and support correspondence. For support or questions about these notices, contact rajhari@gmail.com. No guaranteed support response time is promised here.</p></section>
+<footer><p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple’s Standard License Agreement</a></p>
+<p><a href="mailto:rajhari@gmail.com?subject=BackupVault%20Support">Email rajhari@gmail.com</a></p>
+<p>© 2026 Malar Hari. Updated November 13, 2026.</p></footer>
+</main></body></html>

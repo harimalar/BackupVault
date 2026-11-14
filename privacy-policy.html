@@ -1,89 +1,39 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BackupVault Privacy Policy</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f5f7fb;
-      --surface: rgba(255, 255, 255, 0.92);
-      --text: #172033;
-      --muted: #5f6b84;
-      --border: rgba(27, 39, 63, 0.10);
-      --accent: #3f7cff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0e1117;
-        --surface: rgba(24, 28, 37, 0.94);
-        --text: #f4f7ff;
-        --muted: #a8b0c2;
-        --border: rgba(255, 255, 255, 0.08);
-        --accent: #79a8ff;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 32px 20px 64px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 32px;
-    }
-    h1, h2 { letter-spacing: -0.03em; }
-    h1 { margin-top: 0; font-size: 42px; }
-    h2 { margin-top: 28px; font-size: 24px; }
-    p, li { color: var(--muted); font-size: 17px; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <main>
-    <div class="card">
-      <p><a href="index.html">Back to BackupVault</a></p>
-      <h1>Privacy Policy</h1>
-      <p>Effective date: March 19, 2026</p>
-      <p>BackupVault is a local-first macOS backup app. We designed it to work without accounts, cloud syncing, analytics, or advertising.</p>
-
-      <h2>What BackupVault accesses</h2>
-      <ul>
-        <li>Folders and drives you explicitly choose for backup or restore.</li>
-        <li>Optional NAS or SMB locations you explicitly configure.</li>
-        <li>Basic app settings stored on your Mac, such as schedule and appearance preferences.</li>
-      </ul>
-
-      <h2>What BackupVault does not collect</h2>
-      <ul>
-        <li>No account information.</li>
-        <li>No cloud-stored backup content.</li>
-        <li>No analytics events.</li>
-        <li>No advertising identifiers.</li>
-        <li>No third-party tracking data.</li>
-      </ul>
-
-      <h2>Where your data is stored</h2>
-      <p>Your backups are stored only on the destination you select, such as an external drive or NAS share. The app does not upload your files to a remote service operated by us.</p>
-
-      <h2>NAS credentials</h2>
-      <p>If you connect to an SMB or NAS destination, macOS may prompt you for credentials. Those credentials are handled by macOS and may be stored in Keychain if you choose to save them.</p>
-
-      <h2>Support</h2>
-      <p>If you have privacy questions, contact <a href="mailto:rajhari@gmail.com">rajhari@gmail.com</a>.</p>
-    </div>
-  </main>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BackupVault — Privacy Policy</title>
+<style>
+:root{color-scheme:light dark;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;font-size:18px}body{margin:0;background:light-dark(#f7f8fa,#17191d);color:light-dark(#20252d,#eef0f5)}main{max-width:850px;margin:48px auto;padding:32px;border-radius:20px;background:light-dark(white,#22262d)}nav{display:flex;flex-wrap:wrap;gap:20px}a{color:light-dark(#175cb8,#8dbcff)}h1{font-size:2rem;line-height:1.2}h2{font-size:1.25rem;margin-top:32px}p{margin:12px 0}footer{margin-top:36px;padding-top:20px;border-top:1px solid #8887;font-size:.9rem}@media(max-width:600px){main{margin:0;padding:24px;border-radius:0}}
+</style></head><body><main>
+<nav aria-label="BackupVault pages"><a href="https://harimalar.github.io/BackupVault/">BackupVault</a><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
+<h1>Privacy Policy</h1>
+<section><h2>Last updated</h2>
+<p>November 13, 2026</p></section>
+<section><h2>Who we are</h2>
+<p>BackupVault is a macOS folder backup app developed by Malar Hari. This policy describes data handled by the app and information you choose to send for support. Contact: rajhari@gmail.com.</p></section>
+<section><h2>Your files and backup destinations</h2>
+<p>BackupVault reads folders you select and copies files to the destination you choose, which may be an external drive, another folder, or an SMB network server. Restore writes selected backup files to a location you choose.</p>
+<p>Backups include file contents and metadata, including separate metadata archives within the snapshot for Mac attributes that a destination cannot store directly. Snapshot manifests can include file names, sizes, modification dates, original source paths, your computer name, and backup timestamps. These are stored with the backup so the app can compare snapshots and restore files. We do not receive your backups or operate a backup storage service.</p></section>
+<section><h2>Information stored on your Mac</h2>
+<p>The app saves folder-access bookmarks, destination names and paths, configured NAS host/share/user names, schedules, appearance and backup options, and backup history in local app storage. Diagnostic logs may contain file paths, destination or server names, timestamps, counts, and error descriptions. Logs are stored locally and are not automatically uploaded.</p></section>
+<section><h2>Passwords and security</h2>
+<p>With “Remember login in Keychain” checked in Add Network Drive, choosing a share saves that server's username and password in macOS Keychain and fills them in on your next visit, including after restarting the app. This remembered login remains available even if you cancel before adding a destination or later remove the destination. Passwords used by saved NAS destinations are also stored in Keychain when Remember is checked. Unchecking Remember removes BackupVault's saved logins for that server and uses the entered login only for the current connection; reconnecting later may require signing in again. macOS may separately save credentials when you connect using Finder.</p>
+<p>BackupVault does not add encryption to backup files. Access protection and encryption depend on your destination, macOS settings, and the network server. Optional checksum verification checks copied content; it is not encryption.</p></section>
+<section><h2>Local network access</h2>
+<p>Opening Network Drive starts Bonjour discovery for SMB and AFP services on your local network. Discovery can reveal server names and addresses to the app and involves local network traffic. Choosing a server or entering an address allows the app and macOS to contact it, authenticate, and transfer your selected files. Network-server operators control the storage and logs on their servers. A NAS you configure may be reached through a network connection outside your home or office.</p>
+<p>Local drive backups do not require a network connection. You can cancel discovery, remove a destination, or manage local-network permission in macOS System Settings.</p></section>
+<section><h2>Analytics, advertising, and Apple services</h2>
+<p>BackupVault includes no advertising, tracking SDKs, usage analytics, or automatic crash-report upload service. The app does not send your files or usage data to the developer for advertising, profiling, or sale. No BackupVault account is required.</p>
+<p>The App Store and macOS may process purchases, updates, or diagnostics under Apple's own policies and your system settings. BackupVault's optional notifications use macOS notification settings.</p></section>
+<section><h2>Support and external links</h2>
+<p>Contact Support opens your email app. Nothing is sent until you send the email. If you contact us, we receive your email address and the message or attachments you choose to provide, and use them to respond to your request. Avoid sending passwords or sensitive files; review logs before sharing them. Support correspondence is kept as needed to respond and meet applicable recordkeeping requirements. You can request deletion at the contact address above.</p>
+<p>Opening the online policy, support page, or license uses your browser. The website host and your email provider process those requests under their own privacy policies.</p></section>
+<section><h2>Retention, deletion, and your choices</h2>
+<p>Backups remain on your selected destination until you remove them. Keep the last 10 backups is off by default. If you enable it, after a successful backup the app permanently removes older recognized completed snapshots for this Mac in that backup folder while protecting the newest successful backup. Turning the option off stops future automatic cleanup; it cannot recover backups already removed.</p>
+<p>Removing a source or destination stops its configured use, but does not erase existing backups, history, or logs. Removing a NAS destination attempts to delete the app's password entry for that destination. The separately remembered server login remains available for future setup. Uncheck “Remember login in Keychain” on that server's sign-in screen, or remove entries named “BackupVault network login” in Keychain Access, to forget it. Credentials saved by macOS or older app versions may also remain in Keychain and can be managed there.</p>
+<p>Settings, history, and logs remain in local app storage until removed. Quit the app before manually removing its local data; contact support for instructions. Deleting the app does not erase backups on your drives or servers. No developer-held backup account exists to delete.</p></section>
+<section><h2>Policy changes</h2>
+<p>We update this policy when the app's data handling changes. The date above identifies this version. The online policy and future app releases will carry the current version. Contact us with privacy questions or requests concerning information you have sent to support.</p></section>
+<footer><p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple’s Standard License Agreement</a></p>
+<p><a href="mailto:rajhari@gmail.com?subject=BackupVault%20Support">Email rajhari@gmail.com</a></p>
+<p>© 2026 Malar Hari. Updated November 13, 2026.</p></footer>
+</main></body></html>
